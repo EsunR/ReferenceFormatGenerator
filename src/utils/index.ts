@@ -1,4 +1,4 @@
-export function getBookTypeCode(type: string) {
+export function getBookTypeCode(type: string): string {
   let dictionary = `
     专著M；报纸N；期刊J；专利文献P；汇编G；古籍O；技术标准S；
     学位论文D；科技报告R；参考工具K；检索工具W；档案B；录音带A；
@@ -9,5 +9,7 @@ export function getBookTypeCode(type: string) {
   let result = dictionaryArr.find(dicItem => {
     return new RegExp(type).test(dicItem) ? dicItem : ""
   })
-  console.log(result)
+  return result.trim()
 }
+
+console.log(getBookTypeCode("专著"))

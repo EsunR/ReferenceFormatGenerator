@@ -4,16 +4,12 @@ import Router from "koa-router"
 import cors from "@koa/cors"
 import KoaBody from "koa-body"
 import errorHandler from "./middle/error_handler"
-import dbGenerator from "./db/db_generator"
 import KoaStatic from "koa-static"
 import path from "path"
 import KoaLogger from "koa-logger"
 
 const app: Koa = new Koa()
 const router: Router = new Router()
-
-// Database 不需要数据库的项目直接注释掉下一行，可选择删除 db 层代码
-dbGenerator()
 
 // log
 app.use(KoaLogger())

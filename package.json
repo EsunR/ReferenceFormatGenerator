@@ -1,5 +1,5 @@
 {
-  "name": "serve",
+  "name": "reference-format-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,17 @@
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^3.0.0",
+    "@types/cheerio": "^0.22.17",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-jwt": "^3.6.0",
+    "koa-logger": "^3.2.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "mysql2": "^2.0.0",
-    "reflect-metadata": "^0.1.13",
-    "koa-logger": "^3.2.1"
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/koa": "^2.0.52",

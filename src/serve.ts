@@ -39,10 +39,12 @@ app.use(
 
 // Router
 import testRouter from "./routers/test_router"
+import mainRouter from "./routers/main_router"
 router.use("/api/test", testRouter.routes())
+router.use("/api/main", mainRouter.routes())
 
 app.use(router.routes()).use(router.allowedMethods())
 
 // Listen
 app.listen(sysConfig.port)
-console.log(`serve running on port ${sysConfig.port}`)
+console.log(`serve running on http://localhost:${sysConfig.port}`)

@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="stylesheet" href="./style/mobile.css">
+  <script src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
   <title>Koa Serve</title>
 </head>
+
 <body>
-  <h1>Welcome</h1>
-  <p>koa-static is working !</p>
+  <header>
+    <h1>引用文献格式生成工具</h1>
+    <a class="github" href="https://github.com/EsunR/ReferenceFormatGenerator" target="__blank">
+      <img src="./img/github.webp" alt="Github">
+    </a>
+  </header>
+  <main>
+    <div id="main-wrapper">
+      <div id="trans-btn">
+        <img src="./img/repeat.png" alt="trans">
+      </div>
+      <div class="left inner">
+        <div class="title">查阅文献</div>
+        <textarea name="origin" id="origin" placeholder="Tips: 一行代表一条文献资料"></textarea>
+      </div>
+      <div class="dash"></div>
+      <div class="right inner">
+        <div class="title">参考格式</div>
+        <textarea name="result" id="result" disabled></textarea>
+      </div>
+    </div>
+    <div id="warning" class="hide">
+      <div class="title">以下文献查询不到相关结果</div>
+      <div class="fail-result"></div>
+      <div class="tips">Tips: 查不到的话就多查几次</div>
+    </div>
+  </main>
+  <script src="./js/index.js"></script>
 </body>
+
 </html>

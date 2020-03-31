@@ -8,7 +8,7 @@ let fetching = false
 
 let request = (function() {
   const service = axios.create({
-    baseURL: "http://localhost:9090",
+    baseURL: "/",
     timeout: 8000
   })
 
@@ -47,6 +47,7 @@ function handleBtnClick() {
       transBtn.classList.remove("animate")
     })
     .catch(() => {
+      alert("连接超时，请重试")
       fetching = false
       transBtn.classList.remove("animate")
     })

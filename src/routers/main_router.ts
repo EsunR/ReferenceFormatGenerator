@@ -15,7 +15,7 @@ router.get("/test", async ctx => {
 })
 
 router.get("/find", async ctx => {
-  let searchNames: string[] = ctx.query
+  let searchNames = ctx.query
   let result: any[] = []
   for (let key in searchNames) {
     if (!/book/.test(key)) {

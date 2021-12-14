@@ -14,8 +14,11 @@ export function getBookTypeCode(type: string): string | null {
   return regResult ? regResult[0] : "E"
 }
 
-export function getChildText(cheerio: Cheerio, selector: string): string {
-  return cheerio
+export function getChildText(
+  cheerioObj: cheerio.Cheerio,
+  selector: string
+): string {
+  return cheerioObj
     .find(selector)
     .text()
     .trim()

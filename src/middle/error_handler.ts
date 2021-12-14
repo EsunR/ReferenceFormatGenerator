@@ -5,7 +5,7 @@ export default function() {
   return async function(ctx: Koa.Context, next: Koa.Next) {
     try {
       await next()
-    } catch (err) {
+    } catch (err: any) {
       // 判断是否携带有错误码
       const messageArr = err.message.split("-")
       if (messageArr.length > 0 && !isNaN(parseInt(messageArr[0]))) {

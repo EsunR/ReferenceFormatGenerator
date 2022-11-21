@@ -1,7 +1,6 @@
 import { sysConfig } from "./config"
 import Koa from "koa"
 import Router from "koa-router"
-import cors from "@koa/cors"
 import KoaBody from "koa-body"
 import errorHandler from "./middle/error_handler"
 import KoaStatic from "koa-static"
@@ -23,9 +22,6 @@ app.use(
     gzip: true
   })
 )
-
-// CORS
-app.use(cors())
 
 // 解析 HTTP Body
 app.use(

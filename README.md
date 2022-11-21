@@ -10,22 +10,45 @@
 
 ![](http://img.cdn.esunr.xyz/markdown/引用.jpg)
 
-## cli 指令
+## 使用
 
 安装依赖：
 
 ```sh
-$ npm install
+npm install
 ```
 
 编译为 Javascript：
 
 ```sh
-$ npm run build
+npm run build
 ```
 
-开发模式（热更新模式）：
+运行：
 
 ```sh
-$ npm run dev
+node ./dist/serve.js
+```
+
+使用 pm2 启动：
+
+```sh
+pm2 start ./ecosystem.config.js
+pm2 save
+```
+
+请求 `9093` 端口以访问应用。
+
+## 开发
+
+安装依赖：
+
+```sh
+npm install
+```
+
+开发模式：
+
+```sh
+npm run dev
 ```

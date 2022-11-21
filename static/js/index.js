@@ -9,7 +9,7 @@ let fetching = false
 let request = (function() {
   const service = axios.create({
     baseURL: "/",
-    timeout: 8000
+    timeout: 60000
   })
 
   service.interceptors.response.use(response => {
@@ -36,17 +36,26 @@ function handleBtnClick() {
     let searchName = originArr[i]
     data[`book${i}`] = searchName
   }
+  if (Object.values(data).length > 0) {
+    alert("最多只能查询10本书")
+    return
+  }
   request({
     url: "/api/main/find",
     method: "get",
     params: data
   })
     .then(res => {
-      formatToResult(res.data)
+      formatToResult(res.data.results)
       fetching = false
       transBtn.classList.remove("animate")
+      if (res.data.fail > 0) {
+        alert(
+          `有${res.data.fail}本书籍的查询失败了，请手动删除已查询到的书籍后重试`
+        )
+      }
     })
-    .catch(() => {
+    .catch(e => {
       alert("连接超时，请重试")
       fetching = false
       transBtn.classList.remove("animate")
